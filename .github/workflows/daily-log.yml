@@ -1,6 +1,6 @@
 name: Daily log
 
-# Appends one dated line to log/daily.md each day, from 26 to 28 Nov 2026,
+# Appends one dated line to log/daily.md each day, from 26 to 29 Nov 2026,
 # then stops on its own. Runs at 06:30 UTC (12:00 IST).
 on:
   schedule:
@@ -19,7 +19,7 @@ jobs:
         run: |
           today=$(TZ=Asia/Kolkata date +%F)
           echo "today=$today" >> "$GITHUB_OUTPUT"
-          if [[ "$today" > "2026-11-28" ]]; then
+          if [[ "$today" > "2026-11-29" ]]; then
             echo "run=false" >> "$GITHUB_OUTPUT"
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
