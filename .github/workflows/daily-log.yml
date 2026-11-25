@@ -30,6 +30,9 @@ jobs:
 
       - name: Append and commit
         if: steps.window.outputs.run == 'true'
+        # Commit in IST so the contribution graph files it under the IST date.
+        env:
+          TZ: Asia/Kolkata
         run: |
           today="${{ steps.window.outputs.today }}"
           mkdir -p log
